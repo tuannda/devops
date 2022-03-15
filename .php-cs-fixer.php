@@ -22,13 +22,17 @@ return (new PhpCsFixer\Config())
     ->setRules([
         '@PSR12' => true,
         '@PSR12:risky' => true,
+        '@PHP81Migration' => true,
+        '@PHP80Migration:risky' => true,
+        'heredoc_indentation' => true,
         'array_syntax' => ['syntax' => 'short'],
         'blank_line_after_namespace' => true,
         'blank_line_after_opening_tag' => true,
+        'class_keyword_remove' => true,
         'braces' => true,
         'cast_spaces' => true,
         'concat_space' => [
-            'spacing' => 'none',
+            'spacing' => 'one',
         ],
         'declare_equal_normalize' => true,
         'elseif' => true,
@@ -85,6 +89,8 @@ return (new PhpCsFixer\Config())
         'no_useless_return' => true,
         'no_whitespace_before_comma_in_array' => true,
         'no_whitespace_in_blank_line' => true,
+        'array_push' => true,
+        'ordered_class_elements' => true,
         'normalize_index_brace' => true,
         'not_operator_with_successor_space' => true,
         'object_operator_without_whitespace' => true,
@@ -118,7 +124,7 @@ return (new PhpCsFixer\Config())
         'ternary_operator_spaces' => true,
         'trim_array_spaces' => true,
         'unary_operator_spaces' => true,
-        'whitespace_after_comma_in_array' => true,
+        'whitespace_after_comma_in_array' => false,
 
         // php-cs-fixer 3: Renamed rules
         'constant_case' => ['case' => 'lower'],
@@ -169,4 +175,4 @@ return (new PhpCsFixer\Config())
         ],
     ])
     ->setRiskyAllowed(true)
-    ->setUsingCache(true);
+    ->setUsingCache(false);
