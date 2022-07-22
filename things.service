@@ -1,0 +1,11 @@
+# /etc/systemd/system/multi-user.target.wants/things.service
+
+[Unit]
+Description=webserver Daemon
+
+[Service]
+ExecStart=/home/work/jdk/bin/java -jar /home/work/akame/application/target/thingsboard-3.4.0-boot.jar
+User=work
+
+[Install]
+WantedBy=multi-user.target
